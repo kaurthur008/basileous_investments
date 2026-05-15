@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Dashboard | Basileous Investments</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<header class="hero">
+  <nav>
+    <img src="logo.png" class="nav-logo" alt="Basileous Investments Logo">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="education.html">Education</a>
+      <a href="mentorship.html">Mentorship</a>
+      <a href="signals.html">Signals</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="user-nav">
+      <div id="navAvatar" class="nav-avatar" aria-hidden="true"></div>
+      <span id="dashboardGreeting">Welcome</span>
+      <a class="btn small" href="#profile">Profile</a>
+      <a class="btn small" id="logoutBtn" href="#">Logout</a>
+    </div>
+  </nav>
+  <div class="hero-content">
+    <h1>Your Client Dashboard</h1>
+    <p>Manage your account, update your profile, upload your photo, and keep your contact details current.</p>
+  </div>
+</header>
+<section class="section">
+  <div class="profile-grid">
+    <div class="profile-card">
+      <h2>Account Summary</h2>
+      <div class="notice" id="welcomeNotice">Loading your profile...</div>
+      <div class="profile-details">
+        <p><strong>Username:</strong> <span id="dashboardUsername"></span></p>
+        <p><strong>Full Name:</strong> <span id="dashboardFullName"></span></p>
+        <p><strong>Email:</strong> <span id="dashboardEmail"></span></p>
+        <p><strong>Registered Via:</strong> <span id="dashboardProvider"></span></p>
+      </div>
+    </div>
+    <div class="profile-card" id="profile">
+      <h2>Profile Settings</h2>
+      <div class="photo-block">
+        <div class="avatar placeholder" id="photoPlaceholder">?</div>
+        <img id="profilePhoto" class="avatar" alt="Profile Photo" style="display:none">
+      </div>
+      <form id="profileForm">
+        <div class="form-group">
+          <label for="profileUsername">Username</label>
+          <input id="profileUsername" name="username" class="form-control" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="profileFullName">Full Name</label>
+          <input id="profileFullName" name="fullName" class="form-control" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="photoInput">Upload Profile Photo</label>
+          <input id="photoInput" class="form-control" type="file" accept="image/*">
+        </div>
+        <button class="btn" type="submit">Save Profile</button>
+      </form>
+      <div id="profileMessage" class="notice" style="display:none"></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>&copy; 2026 Basileous Investments. All Rights Reserved.</p>
+</footer>
+<script src="auth.js"></script>
+</body>
+</html>
